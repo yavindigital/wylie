@@ -1,26 +1,29 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@plugin "daisyui" {
+  themes: light --default;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  /* Campaign brand colors — pulled from the David Wylie for Commissioner logo */
+  /* Navy #1A2B4A | Red #BE1E2D | Cream #F0EBE0 */
+  --color-primary: #be1e2d;          /* Campaign red — stripes, CTAs */
+  --color-primary-content: #ffffff;
+  --color-secondary: #1a2b4a;        /* Campaign navy — text, headers */
+  --color-secondary-content: #f0ebe0;
+  --color-accent: #be1e2d;           /* Red accent */
+  --color-accent-content: #ffffff;
+  --color-neutral: #1a2b4a;          /* Navy neutral */
+  --color-neutral-content: #f0ebe0;
+  --color-base-100: #f0ebe0;         /* Cream background */
+  --color-base-200: #e5dfd4;         /* Slightly deeper cream */
+  --color-base-300: #d8d1c4;         /* Card borders */
+  --color-base-content: #1a2b4a;     /* Navy body text */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Typography */
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-heading: "Georgia", serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
