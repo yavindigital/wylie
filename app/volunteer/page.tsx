@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDoorOpen,
+  faPhone,
+  faSign,
+  faHouse,
+  faMobileScreen,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export const metadata: Metadata = {
   title: "Volunteer - David Wylie for County Commissioner",
@@ -7,42 +17,42 @@ export const metadata: Metadata = {
     "Join the fight! Volunteer for the David Wylie for County Commissioner campaign.",
 };
 
-const volunteerOptions = [
+const volunteerOptions: { title: string; description: string; icon: IconDefinition }[] = [
   {
     title: "Knock on Doors",
     description:
       "Help us reach voters in Precinct 4 by going door-to-door to share David's message.",
-    icon: "🚪",
+    icon: faDoorOpen,
   },
   {
     title: "Phone Banking",
     description:
       "Call voters from the comfort of your home to talk about the issues that matter to Denton County.",
-    icon: "📞",
+    icon: faPhone,
   },
   {
     title: "Put Up Yard Signs",
     description:
       "Show your support by placing campaign signs in your yard or neighborhood.",
-    icon: "🪧",
+    icon: faSign,
   },
   {
     title: "Host a Meetup",
     description:
       "Invite friends and neighbors to meet David at your home or local community center.",
-    icon: "🏠",
+    icon: faHouse,
   },
   {
     title: "Share on Social Media",
     description:
       "Spread the word on Facebook and other social platforms to reach more voters.",
-    icon: "📱",
+    icon: faMobileScreen,
   },
   {
     title: "Help at Events",
     description:
       "Assist at campaign events, rallies, and community gatherings across Denton County.",
-    icon: "🎉",
+    icon: faStar,
   },
 ];
 
@@ -78,7 +88,9 @@ export default function VolunteerPage() {
                 className="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="card-body">
-                  <div className="text-4xl mb-3">{opt.icon}</div>
+                  <div className="text-primary mb-3">
+                    <FontAwesomeIcon icon={opt.icon} className="w-8 h-8" />
+                  </div>
                   <h3 className="card-title text-secondary font-bold">
                     {opt.title}
                   </h3>

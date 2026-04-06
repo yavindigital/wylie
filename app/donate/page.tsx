@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRoad, faChartLine, faHandshake } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 export const metadata: Metadata = {
   title: "Donate - David Wylie for County Commissioner",
@@ -22,7 +25,8 @@ export default function DonatePage() {
             Donate to the Campaign
           </h1>
           <p className="text-xl text-white/80 max-w-xl">
-            Stand With a Fighter. Invest in Real Change for Denton County.
+            Stand with a neighbor who will stand up for you. Invest in Denton
+            County&apos;s future.
           </p>
         </div>
       </section>
@@ -34,20 +38,24 @@ export default function DonatePage() {
             Ask yourself:
           </h2>
           <p className="text-xl text-base-content/80 font-semibold mb-8">
-            Will Denton County honor <em>YOUR</em> needs and wishes — or
-            someone else&apos;s?
+            Will Precinct 4 finally get a Commissioner who lives here, works
+            here, and answers to <em>you</em>?
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {[
-              { icon: "🚧", text: "Crumbling roads and mounting traffic congestion" },
-              { icon: "📈", text: "Explosive growth with no leadership" },
-              { icon: "🤝", text: "Precinct 4 ignored for too long" },
-            ].map((item) => (
+            {(
+              [
+                { icon: faRoad, text: "Crumbling roads and mounting traffic congestion" },
+                { icon: faChartLine, text: "Explosive growth with no leadership" },
+                { icon: faHandshake, text: "Precinct 4 ignored for too long" },
+              ] as { icon: IconDefinition; text: string }[]
+            ).map((item) => (
               <div
                 key={item.text}
-                className="bg-white rounded-xl border border-base-200 shadow-sm p-6 text-center"
+                className="bg-base-100 rounded-xl border border-base-200 shadow-sm p-6 text-center"
               >
-                <div className="text-4xl mb-3">{item.icon}</div>
+                <div className="text-primary mb-3">
+                  <FontAwesomeIcon icon={item.icon} className="w-8 h-8" />
+                </div>
                 <p className="text-base-content/80 font-medium">{item.text}</p>
               </div>
             ))}

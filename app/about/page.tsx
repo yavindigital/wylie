@@ -79,11 +79,10 @@ export default function AboutPage() {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-square max-w-sm mx-auto">
             <Image
-              src="https://wyliefordenton.com/wp-content/uploads/2026/03/David-Wyle-Kick-off-105.jpg"
-              alt="David Wylie"
+              src="/images/david-flag.jpg"
+              alt="David Wylie, candidate for Denton County Commissioner"
               fill
-              className="object-cover"
-              unoptimized
+              className="object-cover object-top"
             />
           </div>
         </div>
@@ -153,10 +152,25 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* KICKOFF PHOTO STRIP */}
+      <section className="relative h-64 overflow-hidden">
+        <Image
+          src="/images/kickoff-speaking.jpg"
+          alt="David Wylie speaking at his campaign kickoff"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-secondary/60 flex items-center justify-center">
+          <p className="text-white text-xl md:text-3xl font-extrabold text-center px-4">
+            A Neighbor You Can Trust. A Leader Who Will Deliver.
+          </p>
+        </div>
+      </section>
+
       {/* BANNER */}
       <section className="bg-primary text-white py-8 text-center">
         <p className="text-lg font-bold uppercase tracking-widest">
-          Working Hard. Protecting Freedom. Serving You.
+          Working Hard. Serving Denton County. Putting People First.
         </p>
       </section>
     </>

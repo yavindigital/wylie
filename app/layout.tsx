@@ -12,10 +12,10 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "David Wylie for County Commissioner",
   description:
-    "David Wylie is running for Denton County Commissioner, Precinct 4. Republican fighter for better roads, safer communities, and responsible government.",
+    "David Wylie is running for Denton County Commissioner, Precinct 4 — a neighbor committed to better roads, safer communities, and a government that works for the people.",
   openGraph: {
     title: "David Wylie for County Commissioner",
-    description: "Republican Fighter — Denton County Commissioner, Precinct 4",
+    description: "Your Neighbor. Your Commissioner. — Denton County Precinct 4",
     url: "https://wyliefordenton.com",
     siteName: "David Wylie for County Commissioner",
     images: [

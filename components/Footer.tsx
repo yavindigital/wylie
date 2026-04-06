@@ -11,8 +11,9 @@ export default function Footer() {
               David Wylie for County Commissioner
             </h3>
             <p className="text-sm opacity-80 leading-relaxed">
-              Republican Fighter for Denton County Precinct 4. Fighting for
-              better roads, safer communities, and responsible government.
+              A neighbor committed to Denton County Precinct 4 — working for
+              better roads, safer communities, and responsible government that
+              puts people first.
             </p>
           </div>
 
