@@ -1,0 +1,29 @@
+name: wylie-for-commissioner
+region: nyc
+
+services:
+  - name: web
+    github:
+      repo: yavindigital/wylie
+      branch: main
+      deploy_on_push: true
+    build_command: npm run build
+    run_command: npm run start
+    http_port: 3000
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    instance_count: 1
+    routes:
+      - path: /
+    envs:
+      - key: NODE_ENV
+        value: production
+        scope: RUN_AND_BUILD_TIME
+      - key: DATABASE_URL
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
+      - key: AUTH_SECRET
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
+      - key: NEXTAUTH_URL
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
