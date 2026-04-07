@@ -33,75 +33,63 @@ export default function ContactPage() {
               Fill out the form below and the campaign team will get back to you
               as soon as possible.
             </p>
-            <form action="/api/contact" method="POST" className="space-y-4">
+            <form action="/api/contact" method="POST" className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text font-semibold">First Name *</span>
-                  </label>
+                <div className="flex flex-col gap-1">
+                  <label className="text-sm font-semibold text-secondary">First Name *</label>
                   <input
                     type="text"
                     name="firstName"
                     placeholder="Jane"
-                    className="input input-bordered"
+                    className="input input-bordered w-full"
                     required
                   />
                 </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text font-semibold">Last Name *</span>
-                  </label>
+                <div className="flex flex-col gap-1">
+                  <label className="text-sm font-semibold text-secondary">Last Name *</label>
                   <input
                     type="text"
                     name="lastName"
                     placeholder="Smith"
-                    className="input input-bordered"
+                    className="input input-bordered w-full"
                     required
                   />
                 </div>
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text font-semibold">Email Address *</span>
-                </label>
+              <div className="flex flex-col gap-1">
+                <label className="text-sm font-semibold text-secondary">Email Address *</label>
                 <input
                   type="email"
                   name="email"
                   placeholder="jane@example.com"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   required
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text font-semibold">Phone Number</span>
-                </label>
+              <div className="flex flex-col gap-1">
+                <label className="text-sm font-semibold text-secondary">Phone Number</label>
                 <input
                   type="tel"
                   name="phone"
                   placeholder="(817) 555-0000"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text font-semibold">Subject</span>
-                </label>
+              <div className="flex flex-col gap-1">
+                <label className="text-sm font-semibold text-secondary">Subject</label>
                 <input
                   type="text"
                   name="subject"
                   placeholder="General inquiry, volunteer info..."
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text font-semibold">Message *</span>
-                </label>
+              <div className="flex flex-col gap-1">
+                <label className="text-sm font-semibold text-secondary">Message *</label>
                 <textarea
                   name="message"
                   placeholder="Tell us what's on your mind..."
-                  className="textarea textarea-bordered h-32"
+                  className="textarea textarea-bordered w-full h-32"
                   required
                 />
               </div>

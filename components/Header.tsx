@@ -7,6 +7,8 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/news", label: "News" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/volunteer", label: "Volunteer" },
   { href: "/endorsements", label: "Endorsements" },
   { href: "/contact", label: "Contact" },
@@ -21,12 +23,11 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="https://wyliefordenton.com/wp-content/uploads/2025/06/Asset-41@4x.png"
+            src="/images/logo-website.svg"
             alt="David Wylie for County Commissioner"
-            width={120}
-            height={95}
-            className="h-12 w-auto object-contain"
-            unoptimized
+            width={381}
+            height={108}
+            className="h-14 w-auto object-contain"
           />
         </Link>
 

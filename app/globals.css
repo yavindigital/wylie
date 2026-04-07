@@ -1,27 +1,66 @@
 @import "tailwindcss";
+
+/*
+  Disable ALL built-in DaisyUI themes so none of their :root overrides
+  (default blue primary / pink secondary) can bleed through.
+  We define our own campaign colors directly on :root below.
+*/
 @plugin "daisyui" {
-  themes: light --default;
+  themes: false;
+}
+
+/*
+  Campaign palette — from the David Wylie for Commissioner logo
+  Navy  #1A2B4A  →  oklch(23% .076 264)
+  Red   #BE1E2D  →  oklch(45% .21  23)
+  Cream #F0EBE0  →  oklch(93% .014 80)
+*/
+:root {
+  color-scheme: light;
+
+  /* ── Primary: campaign red #BE1E2D ── */
+  --color-primary:           oklch(45% .21 23);
+  --color-primary-content:   oklch(100% 0 0);
+
+  /* ── Secondary: campaign navy #1A2B4A ── */
+  --color-secondary:         oklch(23% .076 264);
+  --color-secondary-content: oklch(93% .014 80);
+
+  /* ── Accent = same red ── */
+  --color-accent:            oklch(45% .21 23);
+  --color-accent-content:    oklch(100% 0 0);
+
+  /* ── Neutral = navy ── */
+  --color-neutral:           oklch(23% .076 264);
+  --color-neutral-content:   oklch(93% .014 80);
+
+  /* ── Base: cream tones ── */
+  --color-base-100:          oklch(93% .014 80);   /* #F0EBE0 */
+  --color-base-200:          oklch(89.5% .014 80); /* #E5DFD4 */
+  --color-base-300:          oklch(85% .015 80);   /* #D8D1C4 */
+  --color-base-content:      oklch(23% .076 264);  /* navy text */
+
+  /* ── Semantic colors (keep DaisyUI defaults) ── */
+  --color-info:              oklch(74% .16 232.661);
+  --color-info-content:      oklch(29% .066 243.157);
+  --color-success:           oklch(76% .177 163.223);
+  --color-success-content:   oklch(37% .077 168.94);
+  --color-warning:           oklch(82% .189 84.429);
+  --color-warning-content:   oklch(41% .112 45.904);
+  --color-error:             oklch(71% .194 13.428);
+  --color-error-content:     oklch(27% .105 12.094);
+
+  /* ── DaisyUI shape tokens ── */
+  --radius-selector: .5rem;
+  --radius-field:    .25rem;
+  --radius-box:      .5rem;
+  --border:          1px;
+  --depth:           1;
+  --noise:           0;
 }
 
 @theme {
-  /* Campaign brand colors — pulled from the David Wylie for Commissioner logo */
-  /* Navy #1A2B4A | Red #BE1E2D | Cream #F0EBE0 */
-  --color-primary: #be1e2d;          /* Campaign red — stripes, CTAs */
-  --color-primary-content: #ffffff;
-  --color-secondary: #1a2b4a;        /* Campaign navy — text, headers */
-  --color-secondary-content: #f0ebe0;
-  --color-accent: #be1e2d;           /* Red accent */
-  --color-accent-content: #ffffff;
-  --color-neutral: #1a2b4a;          /* Navy neutral */
-  --color-neutral-content: #f0ebe0;
-  --color-base-100: #f0ebe0;         /* Cream background */
-  --color-base-200: #e5dfd4;         /* Slightly deeper cream */
-  --color-base-300: #d8d1c4;         /* Card borders */
-  --color-base-content: #1a2b4a;     /* Navy body text */
-
-  /* Typography */
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-heading: "Georgia", serif;
 }
 
 body {

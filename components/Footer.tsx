@@ -96,11 +96,12 @@ export default function Footer() {
         </div>
 
         {/* Legal */}
-        <div className="border-t border-white/20 mt-8 pt-6 text-center text-xs opacity-60">
+        <div className="border-t border-white/20 mt-8 pt-6 text-center text-xs opacity-60 space-y-1">
           <p>
             Political Advertisement Paid for by David Wylie for County
             Commissioner © 2025. All rights reserved.
           </p>
+          <p>Designed By The Tribe Maker</p>
         </div>
       </div>
     </footer>

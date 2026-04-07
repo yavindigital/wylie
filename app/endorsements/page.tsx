@@ -121,15 +121,35 @@ export default function EndorsementsPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {endorsements.map((e, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl border border-base-200 shadow-sm p-4 flex flex-col"
-              >
-                <p className="font-bold text-secondary">{e.name}</p>
-                <p className="text-sm text-base-content/60">{e.title}</p>
-              </div>
-            ))}
+            {endorsements.map((e, i) => {
+              const isPctChair = e.title.startsWith("Pct Chair");
+              const isStateRep = e.title.startsWith("State Representative");
+              return (
+                <div
+                  key={i}
+                  className={`rounded-xl border shadow-sm p-4 flex flex-col ${
+                    isStateRep
+                      ? "bg-primary border-primary"
+                      : "bg-white border-base-200"
+                  }`}
+                >
+                  <p
+                    className={`${isPctChair ? "font-extrabold" : "font-medium"} ${
+                      isStateRep ? "text-white" : "text-secondary"
+                    }`}
+                  >
+                    {e.name}
+                  </p>
+                  <p
+                    className={`text-sm ${
+                      isStateRep ? "text-white/80" : "text-base-content/60"
+                    }`}
+                  >
+                    {e.title}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
