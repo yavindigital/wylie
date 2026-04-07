@@ -31,6 +31,9 @@ export default async function ProtectedAdminLayout({
             <Link href="/admin/gallery" className="hover:text-white transition-colors">
               Gallery
             </Link>
+            <Link href="/admin/settings" className="hover:text-white transition-colors">
+              Settings
+            </Link>
             <Link href="/" target="_blank" className="hover:text-white transition-colors">
               View Site ↗
             </Link>
