@@ -38,6 +38,14 @@ export default async function AdminDashboard() {
       cta: "Upload / Manage Photos",
       color: "border-secondary",
     },
+    {
+      href: "/admin/settings",
+      icon: "⚙️",
+      title: "Settings",
+      stat: "Users & Passwords",
+      cta: "Manage Admin Users",
+      color: "border-accent",
+    },
   ];
 
   return (
@@ -88,6 +96,10 @@ export default async function AdminDashboard() {
             <li>
               📷 <strong>Gallery:</strong> Upload photos (JPG, PNG, WebP).
               They appear on the public gallery page immediately.
+            </li>
+            <li>
+              ⚙️ <strong>Settings:</strong> Add admin users, update email
+              addresses, and change passwords.
             </li>
             <li>
               🌐 Use{" "}
